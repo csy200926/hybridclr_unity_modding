@@ -126,7 +126,7 @@ namespace HybridCLR.Editor.BuildProcessors
                 {
                     list.Add($"Dummy.AssemblyPlaceHolderForMod{i}.dll");
                 }
-                patcher.AddScriptingAssemblies(SettingsUtil.HotUpdateAssemblyFilesIncludePreserved);
+                patcher.AddScriptingAssemblies(list);
                 patcher.Save(file);
             }
         }
