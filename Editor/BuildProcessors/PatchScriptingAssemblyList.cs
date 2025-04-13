@@ -121,6 +121,11 @@ namespace HybridCLR.Editor.BuildProcessors
             {
                 var patcher = new ScriptingAssembliesJsonPatcher();
                 patcher.Load(file);
+                var list = new List<string>(SettingsUtil.HotUpdateAssemblyFilesIncludePreserved);
+                for (int i = 0; i < 100; ++i)
+                {
+                    list.Add($"Dummy.AssemblyPlaceHolderForMod{i}.dll");
+                }
                 patcher.AddScriptingAssemblies(SettingsUtil.HotUpdateAssemblyFilesIncludePreserved);
                 patcher.Save(file);
             }
